@@ -13,18 +13,8 @@ import cors from "cors";
 import { config } from "dotenv";
 import bodyParser from "body-parser";
 import connectDB from "./config/db.config";
-const typeDefs = `#graphql
-  type Query {
-    hello: String
-  }
-`;
-
-// A map of functions which return data for the schema.
-const resolvers = {
-  Query: {
-    hello: () => "world",
-  },
-};
+import resolvers from "./resolvers";
+import typeDefs from "./typeDefs/firstTypes";
 
 class ExpressApp {
   private app: Application;

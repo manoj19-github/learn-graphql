@@ -5,9 +5,14 @@ const typeDefs=`#graphql
         username:String!
         age:Int!
         nationality:String!
+        friends:[User]
 
     }
     type Query{
         users:[User!]!
+        user(id:ID!):User!
     }
 `
+
+
+export default typeDefs;

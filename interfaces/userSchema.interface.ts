@@ -3,4 +3,5 @@ export interface IUserSchema {
     username:string;
     age:number;
     nationality:string;
+    friends:IUserSchema[]
 }

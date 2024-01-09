@@ -7,7 +7,8 @@ const UserSchema = new Schema<IUserSchema,UserModel>({
     name:{required:true,type:String,trim:true},
     age:{required:true,min:5,type:Number},
     username:{trim:true,required:true,type:String,unique:true},
-    nationality:{trim:true,required:true,type:String}
+    nationality:{trim:true,required:true,type:String},
+    friends:[{type:Schema.Types.ObjectId,ref:"User"}]
 })
 
 const UserModel = model('User', UserSchema);
