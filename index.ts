@@ -12,6 +12,7 @@ import http from "http";
 import cors from "cors";
 import { config } from "dotenv";
 import bodyParser from "body-parser";
+import connectDB from "./config/db.config";
 const typeDefs = `#graphql
   type Query {
     hello: String
@@ -60,6 +61,7 @@ class ExpressApp {
   }
   public async listen() {
     try {
+        connectDB();
       await this.httpServer.listen({ port: this.PORT });
       console.log(`server listening at ${this.PORT}`);
     } catch (error) {
